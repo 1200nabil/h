@@ -11,137 +11,127 @@
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/1200nabil/portfolio/refs/heads/main/favicon/favicon.ico" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/1200nabil/portfolio/refs/heads/main/favicon/favicon.ico" />
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/1200nabil/portfolio/refs/heads/main/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/1200nabil/portfolio/refs/heads/main/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="./favicon/site.webmanifest" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/1200nabil/portfolio/refs/heads/main/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="nabil" />
+    <link rel="manifest" href="https://raw.githubusercontent.com/1200nabil/portfolio/refs/heads/main/favicon/site.webmanifest" />
+
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="loading" id="loading">
+    <div id="loading" class="loading-screen">
         <div class="spinner"></div>
+    </div>
+
+    <div class="theme-picker-wrapper">
+        <button class="theme-toggle" id="theme-btn" title="Open theme panel">
+            <i class="fa-solid fa-palette"></i>
+        </button>
+        <div class="theme-panel hidden" id="theme-panel">
+            <div class="theme-panel-header">
+                <h3>appearance settings</h3>
+                <button class="theme-close-btn" id="theme-panel-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="theme-section">
+                <h4>color presets</h4>
+                <div class="theme-presets-grid">
+                    <button class="preset-btn active" data-theme="gold" style="background: linear-gradient(135deg, #913700 0%, #ffe600 100%);" title="Engineered Gold"></button>
+                    <button class="preset-btn" data-theme="cyber" style="background: linear-gradient(135deg, #ff0055 0%, #00ffcc 100%);" title="Cyberpunk Pink"></button>
+                    <button class="preset-btn" data-theme="toxic" style="background: linear-gradient(135deg, #0d5f00 0%, #00ff66 100%);" title="Toxic Green"></button>
+                    <button class="preset-btn" data-theme="cosmic" style="background: linear-gradient(135deg, #4d0099 0%, #00ffff 100%);" title="Cosmic Purple"></button>
+                    <button class="preset-btn" data-theme="crimson" style="background: linear-gradient(135deg, #910000 0%, #ff4d4d 100%);" title="Crimson Red"></button>
+                </div>
+            </div>
+
+            <div class="theme-section">
+                <h4>custom accent</h4>
+                <label for="color-picker" class="custom-color-picker-wrapper">
+                    <span class="color-preview-circle"></span>
+                    <span class="color-picker-label">choose custom tone</span>
+                    <input type="color" id="color-picker" value="#913700">
+                </label>
+            </div>
+        </div>
     </div>
 
     <div class="bg-canvas"></div>
 
-    <div class="container">
-        <header class="header">
-            <div class="hero">
-                <div class="hero-main">
-                    <img src="https://raw.githubusercontent.com/1200nabil/portfolio/refs/heads/main/favicon/web-app-manifest-512x512.png" alt="Nabil's Avatar" class="avatar">
-                    <div class="hero-info">
-                        <h1>nabil khondaker</h1>
-                        <p class="hero-subtitle">developer, tech enthusiast, and an aspiring engineer</p>
-                        <div class="social-grid">
-                            <button class="social-btn github" data-link="https://github.com/1200nabil" aria-label="GitHub">
-                                <i class="fab fa-github"></i>
-                            </button>
-                            <button class="social-btn discord" data-link="https://discord.com/users/1056634135961153576" aria-label="Discord">
-                                <i class="fab fa-discord"></i>
-                            </button>
-                            <button class="social-btn instagram" data-link="https://instagram.com/ind7kuh" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </button>
-                            <button class="social-btn tiktok" data-link="https://tiktok.com/@ind7kuh/" aria-label="TikTok">
-                                <i class="fab fa-tiktok"></i>
-                            </button>
+    <div class="container main-content">
+        <!-- FIXED HEADER WRAPPERS -->
+<header class="section fade-in" style="margin-top: 2rem; margin-bottom: 2rem;">
+            <div class="hero-card">
+                <div class="hero">
+                    <div class="hero-main">
+                        <div class="avatar-container">
+                            <img src="https://raw.githubusercontent.com/1200nabil/portfolio/refs/heads/main/favicon/web-app-manifest-512x512.png" alt="Nabil Khondaker's Avatar" class="avatar" loading="eager">
+                        </div>
+                        <div class="hero-info">
+                            <h1 class="hero-title text-gradient">nabil khondaker</h1>
+                            <p class="hero-subtitle">developer, tech enthusiast, and an aspiring engineer</p>
+                            <div class="social-grid">
+                                <button class="social-btn" data-link="https://github.com/1200nabil" title="GitHub"><i class="fa-brands fa-github"></i></button>
+                                <button class="social-btn" data-link="https://discord.com/users/891250407312072726" title="Discord"><i class="fa-brands fa-discord"></i></button>
+                                <button class="social-btn" data-link="https://www.instagram.com/ind7kuh/" title="Instagram"><i class="fa-brands fa-instagram"></i></button>
+                                <button class="social-btn" data-link="https://youtube.com/@ind7kuh" title="YouTube"><i class="fa-brands fa-youtube"></i></button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
 
-        <section class="section fade-in">
+        <!-- FIXED DISCORD CONTAINER WITH CARD CLASS -->
+        <section id="discord" class="section fade-in">
             <div class="card status-card">
-                <div class="status-avatar-wrapper">
-                    <img src="https://raw.githubusercontent.com/1200nabil/portfolio/refs/heads/main/favicon/web-app-manifest-512x512.png" alt="Discord Avatar" class="status-avatar">
+                <div class="card-content status-content" style="display: flex; align-items: center; gap: 1rem; width: 100%;">
+                    <div class="status-avatar-wrapper">
+                        <img src="" alt="Discord Avatar" class="status-avatar">
+                    </div>
+                    <div class="status-info">
+                        <h3>Loading...</h3>
+                        <p>Fetching user activity</p>
+                    </div>
+                    <div class="discord-loading"></div>
+                    <div class="discord-icon-wrapper" style="margin-left: auto;">
+                        <i class="fa-brands fa-discord discord-icon"></i>
+                    </div>
                 </div>
-                <div class="discord-loading"></div>
-                <div class="status-info">
-                    <h3>@ind7kuh</h3>
-                    <p>procrastinating.</p>
-                </div>
-                <i class="fab fa-discord discord-icon"></i>
             </div>
         </section>
 
-        <section class="section fade-in">
+        <div class="mechanical-gear-assembly" id="gear-system">
+            <div class="gear gear-sun"><i class="fa-solid fa-gear"></i></div>
+            <div class="gear gear-planet planet-1"><i class="fa-solid fa-gear"></i></div>
+            <div class="gear gear-planet planet-2"><i class="fa-solid fa-gear"></i></div>
+            <div class="gear gear-planet planet-3"><i class="fa-solid fa-gear"></i></div>
+        </div>
+
+        <section id="about" class="section fade-in">
             <h2 class="section-title">about me</h2>
             <div class="card">
                 <div class="card-content">
-                    <div class="about-text">
-                        <p>hi, i'm nabil, originally from bangladesh and i have been programming since 2019— so, just about over half a decade.</p>
-                        <p>i have a strong interest in the engineering field, and currently, enjoyment is found in programming.<br><br>if you would like to see more, my featured projects can be viewed below!</p>
-                    </div>
+                    <p class="about-text">
+                        hey! i am <span class="text-gradient font-bold">nabil khondaker</span>, a teenage developer and programmer from bangladesh. i'm really passionate about coding, technology, and electronics/engineering. i spent most of my time coding random things or tweaking hardware setups. welcome to my portfolio.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <hr><br><br>
-
-        <section class="section fade-in">
-            <h2 class="section-title">skills & expertise</h2>
-            <div class="skills-grid">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="skill-category">
-                            <h3>programming skills</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag"><i class="fab fa-html5"></i>html5</span>
-                                <span class="skill-tag"><i class="fab fa-css3-alt"></i>css3</span>
-                                <span class="skill-tag"><i class="fab fa-js"></i>javascript</span>
-                                <span class="skill-tag"><i class="fab fa-python"></i>python</span>
-                                <span class="skill-tag"><i class="fas fa-code"></i>c/c++</span>
-                                <span class="skill-tag"><i class="fas fa-cogs"></i>lua</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-content">
-                        <div class="skill-category">
-                            <h3>development tools</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag"><i class="fab fa-git-alt"></i>Git</span>
-                                <span class="skill-tag"><i class="fab fa-github"></i>GitHub</span>
-                                <span class="skill-tag"><i class="fas fa-terminal"></i>Terminal</span>
-                                <span class="skill-tag"><i class="fab fa-npm"></i>npm</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-content">
-                        <div class="skill-category">
-                            <h3>miscellaneous</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag"><i class="fas fa-desktop"></i> pc hardware</span>
-                                <span class="skill-tag"><i class="fas fa-user-shield"></i> white hat hacking</span>
-                                <span class="skill-tag"><i class="fas fa-globe"></i> roblox scripting</span>
-                                <span class="skill-tag"><i class="fas fa-robot"></i> ai analyzation</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <hr><br><br>
-
-        <section class="section fade-in">
+        <section id="projects" class="section fade-in">
             <h2 class="section-title">featured projects</h2>
-            <p class="section-subtitle"><em>my most notable work.</em></p>
             <div class="projects-grid" id="projects-container"></div>
         </section>
 
-        <hr><br><br>
+        <section id="older-projects" class="section fade-in">
+            <div class="internal-archive-header">
+                <h2 class="internal-archive-title section-title">older archive</h2>
+            </div>
+            <div class="older-projects-grid" id="older-projects-container"></div>
+        </section>
 
-        <section class="section fade-in">
+        <section id="contact" class="section fade-in">
             <h2 class="section-title">contact me</h2>
             <div class="card">
                 <div class="card-content">
@@ -168,7 +158,7 @@
         </div>
     </footer>
 
-    <script src="projects.js"></script>
-    <script src="script.js"></script>
+    <script src="projects.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

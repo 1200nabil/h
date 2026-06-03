@@ -1,11 +1,13 @@
 fetch('projects.json')
   .then(res => res.json())
   .then(projects => {
-    const container = document.getElementById("projects-container");
+    const featuredContainer = document.getElementById("projects-container");
+    const olderContainer = document.getElementById("older-projects-container");
 
     projects.forEach(p => {
       const card = document.createElement("div");
-      card.className = "project-card";
+      // Style differently if it's an older project for visual hierarchy
+      card.className = p.older ? "older-project-card" : "project-card";
       card.style.cursor = "pointer";
 
       // Card click handling
@@ -39,7 +41,12 @@ fetch('projects.json')
         </div>
       `;
 
-      container.appendChild(card);
+      // Route to correct layout section based on its file flag
+      if (p.older && olderContainer) {
+        olderContainer.appendChild(card);
+      } else if (featuredContainer) {
+        featuredContainer.appendChild(card);
+      }
     });
   })
   .catch(err => {
