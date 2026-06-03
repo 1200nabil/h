@@ -13,11 +13,10 @@
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/1200nabil/portfolio/refs/heads/main/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/1200nabil/portfolio/refs/heads/main/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="./favicon/site.webmanifest" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,7 +31,7 @@
         <header class="header">
             <div class="hero">
                 <div class="hero-main">
-                    <img src="https://raw.githubusercontent.com/1200nabil/portfolio/refs/heads/main/favicon/web-app-manifest-512x512.png" alt="Marwan's Avatar" class="avatar">
+                    <img src="https://raw.githubusercontent.com/1200nabil/portfolio/refs/heads/main/favicon/web-app-manifest-512x512.png" alt="Nabil's Avatar" class="avatar">
                     <div class="hero-info">
                         <h1>nabil khondaker</h1>
                         <p class="hero-subtitle">developer, tech enthusiast, and an aspiring engineer</p>
@@ -46,7 +45,7 @@
                             <button class="social-btn instagram" data-link="https://instagram.com/ind7kuh" aria-label="Instagram">
                                 <i class="fab fa-instagram"></i>
                             </button>
-                            <button class="social-btn telegram" data-link="https://tiktok.com/@ind7kuh/" aria-label="TikTok">
+                            <button class="social-btn tiktok" data-link="https://tiktok.com/@ind7kuh/" aria-label="TikTok">
                                 <i class="fab fa-tiktok"></i>
                             </button>
                         </div>
@@ -58,7 +57,8 @@
         <section class="section fade-in">
             <div class="card status-card">
                 <div class="status-avatar-wrapper">
-                    <img src="https://raw.githubusercontent.com/1200nabil/portfolio/refs/heads/main/favicon/web-app-manifest-512x512.png" alt="Discord Avatar" class="status-avatar"></div>
+                    <img src="https://raw.githubusercontent.com/1200nabil/portfolio/refs/heads/main/favicon/web-app-manifest-512x512.png" alt="Discord Avatar" class="status-avatar">
+                </div>
                 <div class="discord-loading"></div>
                 <div class="status-info">
                     <h3>@ind7kuh</h3>
@@ -80,9 +80,7 @@
             </div>
         </section>
 
-
         <hr><br><br>
-
 
         <section class="section fade-in">
             <h2 class="section-title">skills & expertise</h2>
@@ -111,7 +109,7 @@
                                 <span class="skill-tag"><i class="fab fa-git-alt"></i>Git</span>
                                 <span class="skill-tag"><i class="fab fa-github"></i>GitHub</span>
                                 <span class="skill-tag"><i class="fas fa-terminal"></i>Terminal</span>
-                                <span class="skill-tag"><i class="fas fa-npm"></i>npm</span>
+                                <span class="skill-tag"><i class="fab fa-npm"></i>npm</span>
                             </div>
                         </div>
                     </div>
@@ -132,27 +130,31 @@
                 </div>
             </div>
         </section>
+
         <hr><br><br>
 
         <section class="section fade-in">
             <h2 class="section-title">featured projects</h2>
             <p class="section-subtitle"><em>my most notable work.</em></p>
-            <div class="projects-grid">
-                <div class="projects-grid" id="projects-container"></div>
-            </div>
+            <div class="projects-grid" id="projects-container"></div>
         </section>
 
-                <hr><br><br>
-
+        <hr><br><br>
 
         <section class="section fade-in">
             <h2 class="section-title">contact me</h2>
             <div class="card">
                 <div class="card-content">
-                    <div class="about-text">
-                        <p><strong><i class="fa-solid fa-envelope"></i> </strong> <a href="https://mail.google.com/mail/u/0/#inbox?compose=DXDwSWwvvNqCQgwvqPkSZCcbNbWKtCsfvKwLjGNBGgznxFMLWDvjlWrLjcFJNsCtSpBKBbnZxSJnSSvvpVNjWjTVBXFHQfJxtcGClftJRsrlNMFQDPVpbwkL" class="highlight-link">nabilwrld69@gmail.com</a></p>
-                        <p><strong><i class="fa-brands fa-instagram"></i> </strong> <a href="https://www.instagram.com/ind7kuh/" class="highlight-link">@ind7kuh</a></p>
-                        <p><strong><i class="fa-brands fa-discord"></i> </strong> <a href="https://discord.com/users/891250407312072726" class="highlight-link">@ind7kuh</a></p>
+                    <div class="about-text contact-info">
+                        <p>
+                            <strong><i class="fa-solid fa-envelope"></i> </strong> 
+                            <span id="email-text">nabilwrld69@gmail.com</span>
+                            <button id="copy-email-btn" title="Copy to clipboard" class="copy-btn">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </p>
+                        <p><strong><i class="fa-brands fa-instagram"></i> </strong> <a href="https://www.instagram.com/ind7kuh/" class="highlight-link" target="_blank" rel="noopener noreferrer">@ind7kuh</a></p>
+                        <p><strong><i class="fa-brands fa-discord"></i> </strong> <a href="https://discord.com/users/891250407312072726" class="highlight-link" target="_blank" rel="noopener noreferrer">@ind7kuh</a></p>
                     </div>
                 </div>
             </div>
@@ -161,13 +163,12 @@
 
     <footer class="footer">
         <div class="container">
-            <p>© 2025 nabil khondaker - all rights reserved.</p>
+            <p>© <span id="current-year"></span> nabil khondaker - all rights reserved.</p>
             <p class="text-gradient">made with ❤️ by nabil</p>
         </div>
     </footer>
+
     <script src="projects.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
-
