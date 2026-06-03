@@ -8,9 +8,10 @@ class Portfolio {
         this.setupSocialLinks();      // Makes social buttons open links
         this.setupScrollAnimations(); // Animates sections on scroll
         this.setupProjectCards();     // Adds hover effect to project cards
+        this.setupFooterYear();       // Set up automated dynamic footer updates
+        this.setupEmailCopy();        // Setup clean click-to-copy email mechanics
     }
     setupLoading() {
-        // Hide loading spinner after page load
         window.addEventListener('load', () => {
             const loading = document.getElementById('loading');
             setTimeout(() => {
@@ -20,7 +21,6 @@ class Portfolio {
         });
     }
     setupSocialLinks() {
-        // Make social buttons open their links in a new tab
         const socialBtns = document.querySelectorAll('.social-btn[data-link]');
         socialBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -30,7 +30,6 @@ class Portfolio {
         });
     }
     setupScrollAnimations() {
-        // Fade-in animation for sections as they enter the viewport
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -48,17 +47,45 @@ class Portfolio {
         });
     }
     setupProjectCards() {
-        // Adds a hover effect to project cards
+        // Built-in transitions handling smoothly inside styles stylesheet directly,
+        // but keeping loop hook definitions clean if adjustments are ever added here.
         const projectCards = document.querySelectorAll('.project-card');
         projectCards.forEach(card => {
             card.addEventListener('mouseenter', () => {
                 card.style.transform = 'translateY(-10px) scale(1.02)';
             });
-            
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'translateY(0) scale(1)';
             });
         });
+    }
+    setupFooterYear() {
+        const yearSpan = document.getElementById('current-year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+    }
+    setupEmailCopy() {
+        const copyBtn = document.getElementById('copy-email-btn');
+        const emailText = document.getElementById('email-text');
+        
+        if (copyBtn && emailText) {
+            copyBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText(emailText.textContent.trim())
+                    .then(() => {
+                        const originalIcon = copyBtn.innerHTML;
+                        copyBtn.innerHTML = '<i class="fa-solid fa-check" style="color: #23a55a;"></i>';
+                        copyBtn.style.pointerEvents = 'none';
+                        setTimeout(() => {
+                            copyBtn.innerHTML = originalIcon;
+                            copyBtn.style.pointerEvents = 'auto';
+                        }, 2000);
+                    })
+                    .catch(err => {
+                        console.error('Failed to copy email: ', err);
+                    });
+            });
+        }
     }
 }
 
@@ -85,65 +112,57 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Fetch and update Discord card with live data
 async function updateDiscordCard() {
     const card = document.querySelector('.status-card');
-    card.classList.add('loading'); // Show loading effect
+    if (!card) return;
+    card.classList.add('loading');
 
     try {
-        // Your Discord user ID
         const userId = "1056634135961153576";
-        // Fetch live Discord data from Lanyard API
         const res = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
-        if (!res.ok) {
-            throw new Error("Network response was not ok");
-        }
+        if (!res.ok) throw new Error("Network response was not ok");
+        
         const data = await res.json();
-        if (!data.success) {
-            throw new Error("API returned unsuccessful response");
-        }
+        if (!data.success) throw new Error("API returned unsuccessful response");
 
-        // Extract user info and status
         const user = data.data.discord_user;
         const status = data.data.discord_status;
-        // Use Discord avatar if available, fallback to local image
+        
         const avatarUrl = user.avatar
-            ? `https://raw.githubusercontent.com/1200nabil/portfolio/refs/heads/main/favicon/web-app-manifest-512x512.png`
-            : "./pictures/pfp.jpg";
-        // Display name (global_name) is the new Discord display name
-        const displayName = user.global_name;
-        // Custom status (if set)
+            ? `https://cdn.discordapp.com/avatars/${userId}/${user.avatar}.png?size=512`
+            : "https://raw.githubusercontent.com/1200nabil/portfolio/refs/heads/main/favicon/web-app-manifest-512x512.png";
+            
+        const displayName = user.global_name || user.username;
         const customStatus = data.data.activities.find(a => a.type === 4)?.state || "";
 
-        // Update card with live data
-        document.querySelector('.status-info h3').textContent = displayName || "";
+        document.querySelector('.status-info h3').textContent = displayName;
         document.querySelector('.status-avatar').src = avatarUrl;
-        document.querySelector('.avatar').src = avatarUrl;
+        
+        const heroAvatar = document.querySelector('.avatar');
+        if (heroAvatar) heroAvatar.src = avatarUrl;
+        
         document.querySelector('.status-info p').textContent =
             customStatus || (status.charAt(0).toUpperCase() + status.slice(1));
 
-        // Set Discord icon color based on status
         const icon = document.querySelector('.discord-icon');
-        let color = "#686868ff"; // Default (offline)
+        let color = "#686868"; // Default (offline)
         if (status === "online") color = "#23a55a";
         else if (status === "idle") color = "#faa61a";
         else if (status === "dnd") color = "#ed4245";
-        icon.style.color = color;
+        
+        if (icon) icon.style.color = color;
 
-        // Place the status dot on the avatar (bottom right, slightly hanging)
         let dot = document.querySelector('.discord-status-dot');
         if (!dot) {
             dot = document.createElement('span');
             dot.className = 'discord-status-dot';
-            // Append dot inside the avatar wrapper
             document.querySelector('.status-avatar-wrapper').appendChild(dot);
         }
         dot.style.background = color;
 
     } catch (error) {
-        // Optionally, display a user-friendly error message
         console.error("Discord card fetch error:", error);
         document.querySelector('.status-info h3').textContent = "Unavailable";
         document.querySelector('.status-info p').textContent = "Could not load Discord status.";
     } finally {
-        // Always remove loading spinner
         card.classList.remove('loading');
     }
 }
