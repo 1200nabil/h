@@ -8,9 +8,9 @@ fetch('projects.json')
       card.className = "project-card";
       card.style.cursor = "pointer";
 
-      // Card click: open first repo (unless clicking a link)
+      // Card click handling
       card.addEventListener("click", (e) => {
-        if (e.target.tagName.toLowerCase() === "a") return;
+        if (e.target.tagName.toLowerCase() === "a" || e.target.closest("a")) return;
         if (p.repos && p.repos.length > 0) {
           window.open(p.repos[0].url, "_blank", "noopener,noreferrer");
         } else if (p.repo) {
@@ -21,10 +21,10 @@ fetch('projects.json')
       let repoLinks = "";
       if (p.repos) {
         repoLinks = p.repos.map(r =>
-          `<a href="${r.url}" class="highlight-link" target="_blank">${r.name} Repo</a>`
+          `<a href="${r.url}" class="highlight-link" target="_blank" rel="noopener noreferrer">${r.name} Repo</a>`
         ).join(" | ");
       } else if (p.repo) {
-        repoLinks = `<a href="${p.repo}" class="highlight-link" target="_blank">repo</a>`;
+        repoLinks = `<a href="${p.repo}" class="highlight-link" target="_blank" rel="noopener noreferrer">repo</a>`;
       }
 
       card.innerHTML = `
@@ -32,8 +32,10 @@ fetch('projects.json')
           <h3>${p.title}</h3>
           ${p.tag ? `<div class="project-tag">${p.tag}</div>` : ""}
           <p>${p.description}</p>
-          ${repoLinks ? `<p>${repoLinks}</p>` : ""}
-          ${p.link ? `<p><a href="${p.link}" class="highlight-link" target="_blank">visit site</a></p>` : ""}
+          <div class="project-links">
+            ${repoLinks ? `<p>${repoLinks}</p>` : ""}
+            ${p.link ? `<p><a href="${p.link}" class="highlight-link" target="_blank" rel="noopener noreferrer">visit site</a></p>` : ""}
+          </div>
         </div>
       `;
 
