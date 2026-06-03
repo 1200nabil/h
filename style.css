@@ -29,7 +29,7 @@ html {
     font-size: 16px;
 }
 body {
-    font-family: 'Inter Light', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
@@ -148,7 +148,6 @@ body {
     gap: 0.7rem;
     margin: 0;
     justify-content: flex-start;
-    animation: slideUp 0.8s ease 0.4s both;
 }
 .social-btn {
     width: 44px;
@@ -189,55 +188,8 @@ body {
 }
 
 /* =========================
-   Responsive Design
-   ========================= */
-@media (max-width: 900px) {
-    .header {
-        padding: 1.5rem 0 1rem 0;
-        min-height: unset;
-        margin-bottom: 1.2rem;
-    }
-    .hero-main {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.2rem;
-        padding-left: 0;
-    }
-    .avatar {
-        width: 90px;
-        height: 90px;
-    }
-    .hero-info {
-        align-items: center;
-        text-align: center;
-        width: 100%;
-    }
-    .social-grid {
-        justify-content: center;
-        gap: 0.7rem;
-    }
-}
-@media (max-width: 500px) {
-    .header {
-        padding: 1rem 0 0.5rem 0;
-    }
-    .avatar {
-        width: 70px;
-        height: 70px;
-    }
-    .hero-info h1 {
-        font-size: 2rem;
-    }
-    .social-btn {
-        width: 38px;
-        height: 38px;
-    }
-}
-
-/* =========================
    Discord Card Styles
    ========================= */
-/* Loader spinner for Discord card */
 .discord-loading {
     display: none;
     margin-left: 1rem;
@@ -300,7 +252,7 @@ body {
     margin-bottom: 3rem;
 }
 .status-avatar-wrapper {
-    position: relative; /* Needed for status dot positioning */
+    position: relative;
     display: inline-block;
 }
 .status-avatar {
@@ -311,7 +263,6 @@ body {
     position: relative;
 }
 
-/* Status dot: hangs off the bottom-right of the avatar */
 .discord-status-dot {
     position: absolute;
     bottom: 0px;
@@ -398,9 +349,11 @@ body {
     transform: translateY(-2px);
 }
 hr {
-          width: 73%; /* Adjust the percentage as needed */
-          margin: 0 auto;
-        }
+    width: 73%;
+    margin: 0 auto;
+    border: 0;
+    border-top: 1px solid var(--border);
+}
 .skill-tag i {
     color: var(--accent);
 }
@@ -416,12 +369,6 @@ hr {
     border-radius: var(--radius);
     overflow: hidden;
     transition: var(--transition);
-    cursor: pointer;
-}
-.project-card:hover {
-    transform: translateY(-8px);
-    border-color: rgb(255, 230, 0);
-    box-shadow: var(--shadow), var(--glow);
 }
 .project-content {
     padding: 1.5rem;
@@ -441,9 +388,12 @@ hr {
     color: var(--text-secondary);
     line-height: 1.6;
 }
+.project-links {
+    margin-top: 1rem;
+}
 
 /* =========================
-   Utility & Misc
+   Utility, Contact, & Misc
    ========================= */
 .text-gradient {
     background: linear-gradient(135deg, var(--accent), var(--accent-blue));
@@ -452,16 +402,34 @@ hr {
     background-clip: text;
 }
 .highlight-link {
-    color: var(--accent);
+    color: var(--accent-blue);
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
 }
 .highlight-link:hover {
-    color: var(--accent-blue);
+    color: var(--text-primary);
+    text-decoration: underline;
 }
-
-
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.copy-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.95rem;
+    padding: 0.2rem 0.4rem;
+    transition: var(--transition);
+    border-radius: 4px;
+}
+.copy-btn:hover {
+    color: var(--accent-blue);
+    background: rgba(255, 255, 255, 0.05);
+}
 .about-text {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -470,8 +438,6 @@ hr {
 .about-text p {
     margin-bottom: 0.3rem;
 }
-
-
 .footer {
     text-align: center;
     padding: 3rem 0;
@@ -484,22 +450,39 @@ hr {
 }
 
 /* =========================
-   Responsive Section Layouts
+   Responsive Design Layouts
    ========================= */
+@media (max-width: 900px) {
+    .header {
+        padding: 2rem 0 1rem 0;
+        min-height: unset;
+        margin-bottom: 1.2rem;
+        height: auto;
+    }
+    .hero-main {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding-left: 0;
+    }
+    .avatar {
+        width: 90px;
+        height: 90px;
+    }
+    .hero-info {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    .social-grid {
+        justify-content: center;
+    }
+}
 @media (max-width: 768px) {
     .container {
         padding: 0 1rem;
     }
-    .header {
-        height: 50vh;
-    }
-    .social-grid {
-        flex-wrap: wrap;
-    }
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-    .projects-grid {
+    .skills-grid, .projects-grid {
         grid-template-columns: 1fr;
     }
     .status-card {
@@ -510,24 +493,17 @@ hr {
         margin: 0;
     }
 }
-@media (max-width: 900px) {
-    .header {
-        height: auto;
-        min-height: unset;
-        padding-top: 2rem;
-        padding-bottom: 1rem;
+@media (max-width: 500px) {
+    .avatar {
+        width: 70px;
+        height: 70px;
     }
-    .hero-main {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
+    .hero-info h1 {
+        font-size: 2rem;
     }
-    .hero-info {
-        align-items: center;
-        text-align: center;
-    }
-    .social-grid {
-        justify-content: center;
+    .social-btn {
+        width: 38px;
+        height: 38px;
     }
 }
 
@@ -589,17 +565,4 @@ hr {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-}
-
-.discord-status-dot {
-    position: absolute;
-    bottom: 0px;   /* Move closer to the edge */
-    right: -4px;   /* Shift dot further right, so it hangs off */
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    border: 3px solid var(--bg-primary);
-    z-index: 2;
-    box-shadow: 0 0 6px rgba(0,0,0,0.3);
-    transition: background 0.3s;
 }
