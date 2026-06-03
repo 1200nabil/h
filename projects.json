@@ -4,46 +4,48 @@
     "tag": "unblocked games website",
     "description": "a complete, online games website with classic games with over 350 apps & games",
     "repo": "https://github.com/1200nabil/1200nabil.github.io",
-    "link": "/help"
+    "link": "https://1200nabil.github.io/"
   },
   {
-    "title": "the distraction hub <i class='fab fa-html5'></i> <i class='fab fa-css3-alt'></i> <i class='fab fa-js'></i>",
-    "tag": "parody web app",
-    "description": "a totally real productivity site. not distracting at all.",
-    "repo": "https://github.com/1200nabil/the-distraction-hub",
-    "link": "/the-distraction-hub"
+    "title": "kinematicsJS <i class='fab fa-html5'></i> <i class='fab fa-css3-alt'></i> <i class='fab fa-js'></i>",
+    "tag": "interactive kinematics & physics engine",
+    "description": "a fun interactive engine to view data in real time",
+    "repo": "https://github.com/1200nabil/KinematicsJS",
+    "link": "https://1200nabil.github.io/KinematicsJS/"
+  },
+  {
+    "title": "roboSIM <i class='fab fa-html5'></i> <i class='fab fa-css3-alt'></i> <i class='fab fa-js'></i>",
+    "tag": "a kinematics robotic arm model",
+    "description": "view live data & telemetry on a robotic arm angle",
+    "repo": "https://github.com/1200nabil/RoboSIM",
+    "link": "https://1200nabil.github.io/RoboSIM"
+  },
+  {
+    "title": "terror selfbot <i class=\"fab fa-python\"></i>",
+    "tag": "an automated discord selfbot",
+    "description": "turn your discord account into a selfbot that can do anything with the correct permissions",
+    "repo": "https://github.com/1200nabil/terror-selfbot",
+    "older": true
+  },
+  {
+    "title": "name scraper <i class=\"fab fa-python\"></i>",
+    "tag": "tool for rare usernames",
+    "description": "scrape words/names from a list and see which are available on social media",
+    "repo": "https://github.com/1200nabil/name-scraper",
+    "older": true
   },
   {
     "title": "nitro generator <i class='fab fa-html5'></i> <i class='fab fa-css3-alt'></i> <i class='fab fa-js'></i>",
     "tag": "discord nitro generator",
     "description": "generate infinite unchecked nitro code links at large quantities",
     "repo": "https://github.com/1200nabil/nitro-generator",
-    "link": "/nitro-generator"
-  },
-  {
-    "title": "terror selfbot <i class=\"fab fa-python\"></i>",
-    "tag": "an automated discord selfbot",
-    "description": "turn your discord account into a selfbot that can do anything with the correct permissions",
-    "repo": "https://github.com/1200nabil/terror-selfbot"
-  },
-  {
-    "title": "name scraper <i class=\"fab fa-python\"></i>",
-    "tag": "tool for rare usernames",
-    "description": "scrape words/names from a list and see which are available on social media",
-    "repo": "https://github.com/1200nabil/name-scraper"
-  },
-  {
-    "title": "legacy bash automation script <i class='fas fa-terminal'></i>",
-    "tag": "environment setup utility",
-    "description": "an old terminal script built to configure and clean standard unix workspace structures instantly.",
-    "repo": "https://github.com/1200nabil/",
     "older": true
   },
   {
-    "title": "basic discord echobot <i class='fab fa-js'></i>",
-    "tag": "simple api application",
-    "description": "one of my very first simple chat bots to understand webhook routing patterns via node.js.",
-    "repo": "https://github.com/1200nabil/",
+    "title": "the distraction hub <i class='fab fa-html5'></i> <i class='fab fa-css3-alt'></i> <i class='fab fa-js'></i>",
+    "tag": "parody web app",
+    "description": "a totally real productivity site. not distracting at all.",
+    "repo": "https://github.com/1200nabil/thedistractionhub/",
     "older": true
   }
 ]
