@@ -3,49 +3,52 @@
     "title": "nabilgames <i class='fab fa-html5'></i> <i class='fab fa-css3-alt'></i> <i class='fab fa-js'></i>",
     "tag": "unblocked games website",
     "description": "a complete, online games website with classic games with over 350 apps & games",
-    "repo": "https://github.com/1200nabil/1200nabil.github.io",
-    "link": "https://1200nabil.github.io/"
+    "repo": "https://github.com/nabilkhondaker/nabilkhondaker.github.io",
+    "link": "https://nabilkhondaker.github.io/"
   },
   {
     "title": "kinematicsJS <i class='fab fa-html5'></i> <i class='fab fa-css3-alt'></i> <i class='fab fa-js'></i>",
     "tag": "interactive kinematics & physics engine",
     "description": "a fun interactive engine to view data in real time",
-    "repo": "https://github.com/1200nabil/KinematicsJS",
-    "link": "https://1200nabil.github.io/KinematicsJS/"
+    "repo": "https://github.com/nabilkhondaker/KinematicsJS",
+    "link": "https://nabilkhondaker.github.io/KinematicsJS/"
   },
   {
     "title": "roboSIM <i class='fab fa-html5'></i> <i class='fab fa-css3-alt'></i> <i class='fab fa-js'></i>",
     "tag": "a kinematics robotic arm model",
     "description": "view live data & telemetry on a robotic arm angle",
-    "repo": "https://github.com/1200nabil/RoboSIM",
-    "link": "https://1200nabil.github.io/RoboSIM"
+    "repo": "https://github.com/nabilkhondaker/RoboSIM",
+    "link": "https://nabilkhondaker.github.io/RoboSIM"
   },
   {
     "title": "terror selfbot <i class=\"fab fa-python\"></i>",
     "tag": "an automated discord selfbot",
     "description": "turn your discord account into a selfbot that can do anything with the correct permissions",
-    "repo": "https://github.com/1200nabil/terror-selfbot",
+    "repo": "https://github.com/nabilkhondaker/terror-selfbot",
     "older": true
   },
   {
     "title": "name scraper <i class=\"fab fa-python\"></i>",
     "tag": "tool for rare usernames",
     "description": "scrape words/names from a list and see which are available on social media",
-    "repo": "https://github.com/1200nabil/name-scraper",
+    "repo": "https://github.com/nabilkhondaker/NameScraper",
+    "link": "https://nabilkhondaker.github.io/NameScraper",
     "older": true
   },
   {
     "title": "nitro generator <i class='fab fa-html5'></i> <i class='fab fa-css3-alt'></i> <i class='fab fa-js'></i>",
     "tag": "discord nitro generator",
     "description": "generate infinite unchecked nitro code links at large quantities",
-    "repo": "https://github.com/1200nabil/nitro-generator",
+    "repo": "https://github.com/nabilkhondaker/NitroGenerator",
+    "link": "https://nabilkhondaker.github.io/NitroGenerator",
     "older": true
   },
   {
     "title": "the distraction hub <i class='fab fa-html5'></i> <i class='fab fa-css3-alt'></i> <i class='fab fa-js'></i>",
     "tag": "parody web app",
     "description": "a totally real productivity site. not distracting at all.",
-    "repo": "https://github.com/1200nabil/thedistractionhub/",
+    "repo": "https://github.com/nabilkhondaker/TheDistractionHub/",
+    "link": "https://nabilkhondaker.github.io/TheDistractionHub",
     "older": true
   }
 ]
