@@ -32,7 +32,6 @@
     "tag": "tool for rare usernames",
     "description": "scrape words/names from a list and see which are available on social media",
     "repo": "https://github.com/nabilkhondaker/NameScraper",
-    "link": "https://nabilkhondaker.github.io/NameScraper",
     "older": true
   },
   {
