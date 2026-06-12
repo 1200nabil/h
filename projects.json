@@ -1,10 +1,10 @@
 [
   {
-    "title": "nabilgames <i class='fab fa-html5'></i> <i class='fab fa-css3-alt'></i> <i class='fab fa-js'></i>",
-    "tag": "unblocked games website",
-    "description": "a complete, online games website with classic games with over 350 apps & games",
-    "repo": "https://github.com/nabilkhondaker/nabilkhondaker.github.io",
-    "link": "https://nabilkhondaker.github.io/"
+    "title": "fea playground 2D <i class='fab fa-html5'></i> <i class='fab fa-css3-alt'></i> <i class='fab fa-js'></i>",
+    "tag": "hardware-accelerated 2D finite element analysis Solver",
+    "description": "an browser-native computational mechanics suite built to model, solve, and visualize 2D elastic truss and frame structures in real time",
+    "repo": "https://github.com/nabilkhondaker/FEAPlayground2D",
+    "link": "https://nabilkhondaker.github.io/FEAPlayground2D/"
   },
   {
     "title": "kinematicsJS <i class='fab fa-html5'></i> <i class='fab fa-css3-alt'></i> <i class='fab fa-js'></i>",
@@ -19,6 +19,13 @@
     "description": "view live data & telemetry on a robotic arm angle",
     "repo": "https://github.com/nabilkhondaker/RoboSIM",
     "link": "https://nabilkhondaker.github.io/RoboSIM"
+  },
+  {
+    "title": "nabilgames <i class='fab fa-html5'></i> <i class='fab fa-css3-alt'></i> <i class='fab fa-js'></i>",
+    "tag": "unblocked games website",
+    "description": "a complete, online games website with classic games with over 350 apps & games",
+    "repo": "https://github.com/nabilkhondaker/nabilkhondaker.github.io",
+    "link": "https://nabilkhondaker.github.io/"
   },
   {
     "title": "terror selfbot <i class=\"fab fa-python\"></i>",
